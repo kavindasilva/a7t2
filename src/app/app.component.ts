@@ -20,6 +20,8 @@ export class AppComponent {
 
 	private boolVal=true;
 	private special=true;
+	private special2=false;
+	private special3=3;
 
 	private msgObj={
 		"p-suc": !this.boolVal,
@@ -27,5 +29,16 @@ export class AppComponent {
 		"p-20": this.special
 	};
 
+	private styleObj={
+		color: "blue",
+		fontStyle: "italic"
+	};
+
   	title = 'a7t2 from a7t1';
+  	var1="VAR";
+
+  	eveClick(event){
+  		this.var1+=" hi";
+  		console.log(event);
+  	}
 }
