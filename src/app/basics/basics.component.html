@@ -1,0 +1,158 @@
+<p>
+  basics works!
+</p>
+
+<div>
+	<h4>Structural directives - For</h4>
+	*ngFor="let val of colors" <br/>
+	<P *ngFor="let val of colors"> 
+		<!--span [style.color]=" '{{val}}' " > {{val}} </span-->
+	</P>
+</div><hr/>
+
+<div>
+	<h4>Structural directives - For</h4>
+	first as f, last as l, odd as o, even as e<br>
+	*ngFor="let val of colors; index as i" <br/>
+	<P *ngFor="let val of colors; index as i "> 
+		<span [ngStyle]="{'color':'val'}" > {{i}}  => {{val}} </span>
+		<span style="color:{{val}}" > {{i}}  => {{val}} </span>
+	</P>
+</div><hr/>
+
+
+<div>
+	<h4>Structural directives - Switch</h4>
+	<P [ngSwitch]="color1">[ngSwitch]="color1" <br/>
+		<span *ngSwitchCase="'red'"> *ngSwitchCase="'red'" </span>
+		<span *ngSwitchCase="'green'"> *ngSwitchCase="'green'" </span>
+		<span *ngSwitchCase="'blue'"> *ngSwitchCase="'blue'" </span>
+		<span *ngSwitchDefault> *ngSwitchDefault </span>
+	</P>
+</div><hr/>
+
+<div>
+	<h4>Structural directives - IF</h4>
+	*ngIf="special; then trueblock; else elseblock<br>
+	<p *ngIf="special; then trueblock; else elseblock"></p>
+	<ng-template #trueblock>
+		<span>#trueblock</span>
+	</ng-template>
+	<ng-template #elseblock>
+		<span>#elseblock</span>
+	</ng-template>
+
+
+	<hr>
+	special ={{special}} value<br>
+	<p> *ngIf="special" <span *ngIf="special"></span> </p>
+
+	<p> *ngIf="special; else elseb2:" <span *ngIf="special; else elseb2">special ={{special}} value</span> </p>
+	<ng-template #elseb2>
+		<span>#elseb2 part</span>
+	</ng-template>
+	
+</div><hr/>
+
+<div>
+	<h4>Two way binding</h4>
+	<input [(ngModel)]="name" type="text" />
+	{{name}}
+</div><hr/>
+
+<div>
+	<h4>Template reference variables</h4>
+	<input #ip1 type="text" name=""/>
+	<button (click)=func1(ip1.value)>(click)=func(ip1.value)</button><br/>
+	<input #ip2 type="text" name=""/>
+	<button (click)=func1(ip2)>(click)=func(ip2)</button><br/>
+</div><hr/>
+
+<div>
+	<h4>Event Binding</h4>
+	<button (click)="eveClick()">(click)="eveClick()"</button><br>
+	{{var1}}<br/>
+	<button (click)="eveClick($event)">(click)="eveClick($event)"</button><br>
+	{{var1}}<br/>
+	<button (click)="var1='newVar1 value'">(click)="var1='newVar1 value'"</button><br>
+	{{var1}}<br/>
+	<button ></button><br/>
+
+
+</div><hr/>
+
+<div>
+	<h4>Style Binding</h4>
+	<p [style.color]="'orange'"> '['style.color']'="'orange'" </p>
+	<p [style.color]="special?'brown':'orange'"> '['style.color']'="special?'brown':'orange'" </p>
+	<p [style.color]="special2?'brown':'orange'"> '['style.color']'="special2?'brown':'orange'" </p>
+	<p [style.color]="(special3<7)?'brown':'orange'"> '['style.color']'="(special3<7)?'brown':'orange'" </p>
+	<p [style.color]="(special3<2)?'brown':'orange'"> '['style.color']'="(special3<2)?'brown':'orange'" </p>
+
+	<p [ngStyle]="styleObj">[ngStyle] </p>
+
+	<p [class.p-crit]="propSuc">Testing para 2-3 </p>
+	<p [class.p-crit]="boolVal">Testing para 2-4 </p>
+</div><hr/>
+
+<div>
+	<h4>Class Binding</h4>
+	<P>{{ 2+3 }}</P>
+	<p class="p-warn"> class="p-warn" </p>
+	<p [class]="propSuc">[class]="propSuc"</p>
+	<p [class]="propsuc">[class]="propsuc" | case sensitive </p>
+
+	<p [class.p-crit]="propSuc">[class.p-crit]="propSuc" </p>
+	<p [class.p-crit]="boolVal">[class.p-crit]="boolVal" </p>
+
+
+	<p [ngClass]="msgObj">Testing para 2-5 </p>
+	<p >Testing para 3 </p>
+</div><hr>
+
+
+<div>
+	<h4>Property Binding</h4>
+	<input type="text" [disabled]="isDisabled" value="[disabled]='isDisabled'"> <br>
+	<input type="text" bind-disabled="isDisabled" value="bind-disabled='isDisabled'"> <br>
+	<input type="text" value="text1 value"> <br>
+
+	<input type="text" name="txt1" id="txt1" value="text1 value"> <br>
+	<input type="text" [id]="txt2" value="[id]='txt2'"> <br>
+	<input type="text" id="{{txt3}}" value="id='{{'txt3'}}'"> <br>
+	<input type="text" id={{txt4}} value="text4 value"> <br>
+</div><hr/>
+
+<div>
+	<h4>Pipe operator</h4>
+	<p>original: {{name}}</p>
+	<p>var | lowercase: {{name|lowercase}}</p>
+	<p>var | uppercase: {{name|uppercase}}</p>
+	<p>var | titlecase: {{name|titlecase}}</p>
+
+	<p>var | slice:0:4 {{ name| slice:0:4 }}</p>
+	<p>var | slice:2 {{name| slice:2}}</p>
+
+	<p>var | json: {{msgObj| json }}</p>
+
+	<h4>Pipe operator => number: "numDigits.minDecimal-maxDecimal"</h4>
+	<p>31.625| number:'1.2-3' -> {{special4 | number:'1.2-3' }}</p>
+	<p>31.625| number:'3.4-5' -> {{special4 | number:'3.4-5' }}</p>
+	<p>31.625| number:'3.1-2' -> {{special4 | number:'3.1-2' }}</p>
+	<p>31.625| number:'1.0-1' -> {{special4 | number: '1.0-1'}}</p>
+
+	<p>31.625| percent -> {{special4 | percent}}</p>
+	<p>31.625| currency -> {{special4 | currency}}</p>
+	<p>31.625| currency 'LKR' -> {{special4 | currency: 'LKR'}}</p>
+	<p>31.625| currency 'GBP' -> {{special4 | currency: 'GBP'}}</p>
+
+	<h4>Pipe operator => Date</h4>
+	<p>date -> {{date1}}</p>
+	<p>date|date:'short' -> {{date1 | date:'short'}}</p>
+	<p>date|date:'shortDate' -> {{date1 | date:'shortDate'}}</p>
+	<p>date|date:'shortTime' -> {{date1 | date:'shortTime'}}</p>
+	<p>date|date:'medium' -> {{date1 | date:'medium'}}</p>
+	<p>date}date:'long' -> {{date1 | date:'long'}}</p>
+
+</div>
+

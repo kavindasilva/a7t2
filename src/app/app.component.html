@@ -3,63 +3,21 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
+  <h6>{{childMsg}}</h6>
 
   <!--img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="-->
 </div>
 
 <div>
-	<h4>Event Binding</h4>
-	<button (click)="eveClick()">(click)="eveClick()"</button><br>
-	{{var1}}<hr/>
-	<button (click)="eveClick($event)">(click)="eveClick($event)"</button><br>
-	{{var1}}<hr/>
-	<button (click)="var1='newVar1 value'">(click)="var1='newVar1 value'"</button><br>
-	{{var1}}<hr/>
-	<button ></button><hr/>
-
-
+	<app-tut2></app-tut2>
 </div><hr/>
 
-<div>
-	<h4>Style Binding</h4>
-	<p [style.color]="'orange'"> '['style.color']'="'orange'" </p>
-	<p [style.color]="special?'brown':'orange'"> '['style.color']'="special?'brown':'orange'" </p>
-	<p [style.color]="special2?'brown':'orange'"> '['style.color']'="special2?'brown':'orange'" </p>
-	<p [style.color]="special3?'brown':'orange'"> '['style.color']'="special3?'brown':'orange'" </p>
+<!--div>
+	<app-tut2 (childEve)="childMsg=$event" [parentData]="name"></app-tut2>
+</div><hr/-->
 
-	<p [ngStyle]="styleObj">[ngStyle] </p>
-
-	<p [class.p-crit]="propSuc">Testing para 2-3 </p>
-	<p [class.p-crit]="boolVal">Testing para 2-4 </p>
-</div><hr/>
-
-<div>
-	<h4>Class Binding</h4>
-	<P>{{ 2+3 }}</P>
-	<p class="p-warn"> class="p-warn" </p>
-	<p [class]="propSuc">[class]="propSuc"</p>
-	<p [class]="propsuc">[class]="propsuc" | case sensitive </p>
-
-	<p [class.p-crit]="propSuc">[class.p-crit]="propSuc" </p>
-	<p [class.p-crit]="boolVal">[class.p-crit]="boolVal" </p>
-
-
-	<p [ngClass]="msgObj">Testing para 2-5 </p>
-	<p >Testing para 3 </p>
-</div><hr>
-
-
-<div>
-	<h4>Property Binding</h4>
-	<input type="text" [disabled]="isDisabled" value="[disabled]='isDisabled'"> <br>
-	<input type="text" bind-disabled="isDisabled" value="bind-disabled='isDisabled'"> <br>
-	<input type="text" value="text1 value"> <br>
-
-	<input type="text" name="txt1" id="txt1" value="text1 value"> <br>
-	<input type="text" [id]="txt2" value="[id]='txt2'"> <br>
-	<input type="text" id="{{txt3}}" value="id='{{'txt3'}}'"> <br>
-	<input type="text" id={{txt4}} value="text4 value"> <br>
-</div>
-
+<!----
+<app-basics></app-basics>
+<!-- -->
 
 <router-outlet></router-outlet>

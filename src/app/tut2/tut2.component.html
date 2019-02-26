@@ -1,3 +1,12 @@
 <p>
   tut2 works!
 </p>
+
+<p *ngFor="let val of empArr; index as i ">
+	<li>{{val.name}}</li>
+</p>
+
+<p>
+	Hi tut2 {{name}}. <br/>
+	<button (click)="sendEve()"></button>
+</p>
