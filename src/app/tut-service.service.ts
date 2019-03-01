@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { iEmp } from './emps';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
+//import 'rxjs/add/operator/catch';
+//import 'rxjs/add/observable/throw';
+
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +28,8 @@ export class TutServiceService {
 
 		// cast to iEmp array
 		return this.http.get<iEmp[]>(this.urlJson);
-		//return this.http.get<iEmp[]>(this.urlAll);
+			//.catch(this.errHandle );
+		//return this.http.get<iEmp[]>(this.urlAll)
 	}
 
 	getEmps0(){
@@ -33,5 +40,11 @@ export class TutServiceService {
 			{"id":4, "name":"n4jkl", "age": 11 },
 			{"id":5, "name":"n5mno", "age": 10 }
 		];
+	}
+
+	errHandle(error: HttpErrorResponse){
+		console.log();
+		return Observable.throw(error.message || "server error1");
+		
 	}
 }

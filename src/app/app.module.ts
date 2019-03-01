@@ -4,12 +4,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import {FormsModule} from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComps } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Tut2Component } from './tut2/tut2.component';
 import { BasicsComponent } from './basics/basics.component';
 import { Tut3Component } from './tut3/tut3.component';
 import { TutServiceService } from './tut-service.service';
+import { StudComponent } from './stud/stud.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { TutServiceService } from './tut-service.service';
     AppComponent,
     Tut2Component,
     BasicsComponent,
-    Tut3Component
+    Tut3Component,
+    StudComponent
   ],
   imports: [
     BrowserModule,

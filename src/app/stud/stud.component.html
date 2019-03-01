@@ -1,0 +1,14 @@
+<p>
+  stud works!
+</p>
+
+
+<div (click)="sel(val)" *ngFor="let val of studArr; index as i">
+	<li >{{val.stid}} {{val.stname}} {{val.stage}}</li>
+	
+</div>
+
+<div >
+	{{selectId}}
+</div>
+

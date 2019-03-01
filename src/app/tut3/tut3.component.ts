@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TutServiceService } from '../tut-service.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-tut3',
   templateUrl: './tut3.component.html',

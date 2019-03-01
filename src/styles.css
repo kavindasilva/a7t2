@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+nav li a.active{
+	color: green;
+	font-size: 8px;
+}

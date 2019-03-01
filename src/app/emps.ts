@@ -8,3 +8,9 @@ export interface iEmp{
 	name: string,
 	age: number
 }
+
+export interface stud{
+	stid: number,
+	stname: string,
+	stage: number
+}
