@@ -6,6 +6,12 @@ import { BasicsComponent } from './basics/basics.component';
 import { Tut2Component } from './tut2/tut2.component';
 import { Tut3Component } from './tut3/tut3.component';
 
+import { VehiclesComponent } from './pal/vehicles/vehicles.component';
+import { LoginComponent } from './pal/login/login.component';
+import { HomeComponent } from './pal/home/home.component';
+
+import { Form1Component } from './pal/form1/form1.component';
+
 import { StudComponent, StudComponent2 } from './stud/stud.component';
 
 const routes: Routes = [
@@ -19,8 +25,13 @@ const routes: Routes = [
 
 	{ path: 'studs', component:StudComponent },
 	{ path: 'studs/:id', component:StudComponent2 },
-
 	{ path: 'basics', component:BasicsComponent },
+
+	//{ path: 'pal', component:VehiclesComponent },
+	{ path: 'pal', component:HomeComponent },
+	{ path: 'pal/login', component:LoginComponent },
+
+	{ path: 'pal/form1', component:Form1Component },
 
 	{ path: "**", component: Tut2Component }, // page not found 
 ];
