@@ -1,0 +1,17 @@
+<p>
+  home works!
+</p>
+
+<div>
+	<p *ngIf="authServ.isLogged(); then logged; else notlogged"></p>
+
+	<ng-template #logged>
+		<li (click)="logOut()"  >LogOut</li>
+	</ng-template>
+
+	<ng-template #notlogged>
+		<li >You are not logged in</li>
+		<a routerLink="/pal/login">Login</a>
+	</ng-template>
+
+</div>
