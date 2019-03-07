@@ -10,6 +10,9 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./stud.component.css']
 })
 export class StudComponent implements OnInit {
+	private sid :number;
+	private sname: string;
+	private sage: number;
 	private studArr=[];
 	;
 
@@ -27,7 +30,7 @@ export class StudComponent implements OnInit {
   				"reqtime":"02:27 01:12:13"} */
 
   		this._studService.getStuds()
-  			.subscribe(data => this.studArr=data.data);
+  			.subscribe(data => this.studArr=data);
   	}
 
   	sel(stud){

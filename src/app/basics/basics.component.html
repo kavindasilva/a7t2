@@ -17,6 +17,7 @@
 	<P *ngFor="let val of colors; index as i "> 
 		<span [ngStyle]="{'color':'val'}" > {{i}}  => {{val}} </span>
 		<span style="color:{{val}}" > {{i}}  => {{val}} </span>
+		<span [style.color]="val" [style.fontsize]="20" > {{i}}  => {{val}} </span>
 	</P>
 </div><hr/>
 

@@ -12,3 +12,47 @@
 	{{selectId}}
 </div>
 
+<div id="theList">
+	<h2>The list</h2>
+
+	<div class="list-group">
+		<div *ngFor="let item of studArr;let i = index;" class="list-group-item row">
+			<tr>
+				<td>
+					<input type="text"
+					[(ngModel)]="studArr[i].stid"
+					class="form-control"
+					required
+					pattern="^[0-9]+$"
+					#model="ngModel"
+					[ngClass]="{ 'is-invalid': model.touched && model.invalid }" />
+				</td>
+				<td>
+					<input type="text"
+					[(ngModel)]="studArr[i].stname"
+					class="form-control"
+					required
+					pattern="^[a-zA-Z]+$"
+					#model2="ngModel"
+					[ngClass]="{ 'is-invalid': model.touched && model.invalid }" />
+				</td>
+				<td class="">
+					<input type="number"
+					[(ngModel)]="studArr[i].stage"
+					class="form-control"
+					required
+					#price="ngModel"
+					[ngClass]="{ 'is-invalid': price.touched && price.invalid }" />
+				</td>
+				<td class="">
+					<input type="button"
+					value="Update"
+					class="btn btn-success btn-sm"
+					[disabled]="model.invalid || price.invalid"
+					(click)="updateStud(model, price, item.id)" />
+				</td>
+			</tr>
+		</div>
+	</div>
+</div>
+

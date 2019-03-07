@@ -3,5 +3,17 @@
 </p>
 
 <div>
+	<ul>
+		<li *ngFor="let val of studArr">
+			{{ val.stid }}
+		</li>
+	</ul>
+</div>
+
+<div>
+	<input [(ngModel)]="var1" name="" (keyup)="inputFun1()" />
+</div>
+
+<div>
 	<button (click)="sel(dept)"></button>
 </div>
