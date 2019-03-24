@@ -1,0 +1,33 @@
+<p>
+  form2reactive works!
+</p>
+
+<div>
+	<!--form #angForm="ngForm" (ngSubmit)="checkForm(angForm)" -->
+	<form [formGroup]="formObj">
+
+		<div class="form-group">
+			<label for="">Username</label>
+			<input  type="text" id="uname" name="uname" #uname class="form-control" 
+			formControlName="username" />
+			<!--div *ngIf="formObj.get('username').touched && formObj.get('username').invalid" class="alert alert-warning">Username required*</div-->
+			<div *ngIf="formObj.get('username').touched && formObj.get('username').invalid" class="alert alert-warning">
+				<span *ngIf="username.errors.required">Required</span>
+				<span *ngIf="username.errors.minlength">Min length</span>
+				<span *ngIf="username.errors.pattern">Only letters</span>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label for="">Password</label>
+			<input  type="text" id="passw" name="passw" #passw class="form-control"
+			formControlName="password" />
+			<div *ngIf="password.touched " class="alert alert-warning">Set a password</div>
+		</div>
+
+		<div>
+			<button class="btn btn-primary">Submit</button>
+		</div>
+
+	</form>
+</div>

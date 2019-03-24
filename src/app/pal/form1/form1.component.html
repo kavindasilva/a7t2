@@ -25,12 +25,48 @@
 			<label for="comment">TxtArea</label>
 			<textarea id="comment" cols="30" rows="2" class="form-control"></textarea>
 		</div>
+
+		<div>
+			<label >
+				<input type="checkbox" ngModel #chk1 name="chk1" />Check box 1
+			</label>
+		</div>
+
+		<div>
+			<label class="form-group">Contact method</label>
+			<select name="cMeth" class="form-control" id="cMeth" ngModel #cMeth placeholder="contact options" >
+				<option *ngFor="let val of listOpts" [value]="val.id" > {{ val.name }} => {{ val.value }} </option>
+			</select>
+		</div>
+
+		<div>
+			<!--label class="form-group">
+				<input ngModel type="radio" name="rGroup1" value="" >Radio selection
+			</label><br/>
+			<label class="form-group">
+				<input ngModel type="radio" name="rGroup1" value="" >Radio selection
+			</label><br/>
+			<label class="form-group">
+				<input ngModel type="radio" name="rGroup1" value="" >Radio selection
+			</label><br/>
+			<label class="form-group">
+				<input ngModel type="radio" name="rGroup1" value="" >Radio selection
+			</label><br/-->
+			
+			<label *ngFor="let val of listOpts" class="form-group">
+				<input ngModel type="radio" name="rGroup1" [value]="val.id" > {{val.name}}=>{{val.value}}<br/>
+			</label>
+		</div>
 		
 
 		<!--disabled if method returns false-->
 		<button class="btn btn-success" [disabled]="!checkForm(angForm)" >Submit</button>
 		<button class="btn btn-warning" [disabled]="!enableSubmit" >Submit</button>
 		<button class="btn btn-disabled" (click)="logInput(angForm)" >Submit</button>
+
+		<div>
+			{{ angForm.value | json }}
+		</div>
 
 	</form>
 </div>
