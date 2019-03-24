@@ -1,0 +1,17 @@
+<p>
+  colors works!
+</p>
+
+
+<div>
+	TwoWay: <input [(ngModel)]="bgCol" type="text" placeholder="Enter bg color in RGB" /> <br/>
+	OneWay: <input [value]="bgCol" type="text" placeholder="Enter bg color in RGB" /> <br/>
+
+	<div class="bgCol1" [style.backgroundColor]="bgCol2">
+		<p>1 Para1 in Div class=bgCol1</p>
+	</div>
+
+	<div class="bgCol1" [style.backgroundColor]="bgCol" >
+		<p>2 Para2 in Div class=bgCol1</p>
+	</div>
+</div>

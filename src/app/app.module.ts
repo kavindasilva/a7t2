@@ -5,7 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 //import { Http } from '@angular/http';
 
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule, routingComps } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,12 +17,17 @@ import { StudComponent } from './stud/stud.component';
 
 import { St2Service } from './st2.service';
 import { DataService } from './pal/data.service';
+import { StudentsService } from './dyn/students.service';
+
 import { VehiclesComponent } from './pal/vehicles/vehicles.component';
 import { DriversComponent } from './pal/drivers/drivers.component';
 import { LoginComponent } from './pal/login/login.component';
 import { AuthService } from './pal/auth.service';
 import { HomeComponent } from './pal/home/home.component';
 import { Form1Component } from './pal/form1/form1.component';
+import { Form2reactiveComponent } from './pal/form2reactive/form2reactive.component';
+import { ColorsComponent } from './dyn/colors/colors.component';
+import { StudentsComponent } from './dyn/students/students.component';
 
 @NgModule({
   declarations: [
@@ -35,12 +40,17 @@ import { Form1Component } from './pal/form1/form1.component';
     DriversComponent,
     LoginComponent,
     HomeComponent,
-    Form1Component
+    Form1Component,
+    Form2reactiveComponent,
+    ColorsComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+
     HttpClientModule,
 
     NgbModule.forRoot()
@@ -49,7 +59,8 @@ import { Form1Component } from './pal/form1/form1.component';
     TutServiceService,
     St2Service,
     DataService,
-    AuthService
+    AuthService,
+    StudentsService
     ],
   bootstrap: [AppComponent]
 })
